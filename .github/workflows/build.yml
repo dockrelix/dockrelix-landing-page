@@ -24,7 +24,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        docker build . --file landing-page.Dockerfile --tag sirgeon/dockrelix-landing-page:latest
+        docker build . --file Dockerfile --tag sirgeon/dockrelix-landing-page:latest
 
     - name: Push the Docker image to Docker Hub
       run: |
