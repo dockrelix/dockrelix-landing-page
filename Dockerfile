@@ -2,11 +2,11 @@ FROM node:22.3.0-alpine as build
 
 WORKDIR /app
 
-COPY landing-page/package.json landing-page/package-lock.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY ./landing-page .
+COPY . .
 
 RUN npm run build
 
