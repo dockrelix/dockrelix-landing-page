@@ -410,7 +410,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              50 GB SSD
+              50 GB HDD
             </li>
             <li class="flex items-center">
               <svg
@@ -503,7 +503,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              100 GB NVMe
+              100 GB HDD
             </li>
             <li class="flex items-center">
               <svg
@@ -592,7 +592,7 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              30 GB SSD
+              30 GB HDD
             </li>
             <li class="flex items-center">
               <svg
@@ -741,26 +741,15 @@
             >
             <div class="flex space-x-4">
               <button
-                @click="setStorageType('ssd')"
+                @click="setStorageType('HDD')"
                 :class="[
                   'px-6 py-3 rounded-lg text-center w-1/2 transition-all duration-300',
-                  storageType === 'ssd'
+                  storageType === 'HDD'
                     ? 'bg-[#4ecdc4] text-[#1a1a2e] font-semibold'
                     : 'bg-[#f0f0f0] text-[#615959] hover:bg-[#e0e0e0]',
                 ]"
               >
-                SSD
-              </button>
-              <button
-                @click="setStorageType('nvme')"
-                :class="[
-                  'px-6 py-3 rounded-lg text-center w-1/2 transition-all duration-300',
-                  storageType === 'nvme'
-                    ? 'bg-[#4ecdc4] text-[#1a1a2e] font-semibold'
-                    : 'bg-[#f0f0f0] text-[#615959] hover:bg-[#e0e0e0]',
-                ]"
-              >
-                NVMe
+                HDD
               </button>
             </div>
           </div>
@@ -916,14 +905,14 @@ const nodeType = ref("manager");
 const cpuCores = ref(1);
 const ram = ref(1);
 const storage = ref(25);
-const storageType = ref("ssd");
+const storageType = ref("HDD");
 
 const nodeTypeDisplay = computed(() => {
   return nodeType.value === "manager" ? "Manager" : "Worker";
 });
 
 const storageTypeDisplay = computed(() => {
-  return storageType.value === "nvme" ? "NVMe" : "SSD";
+  return storageType.value = "HDD";
 });
 const calculatedPrice = computed(() => {
   const basePrice = 2.5;
@@ -963,12 +952,12 @@ function setNodeType(type) {
     cpuCores.value = 1;
     ram.value = 1;
     storage.value = 25;
-    storageType.value = "ssd";
+    storageType.value = "HDD";
   } else {
     cpuCores.value = 1;
     ram.value = 1;
     storage.value = 25;
-    storageType.value = "ssd";
+    storageType.value = "HDD";
   }
 }
 
