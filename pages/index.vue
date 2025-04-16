@@ -932,7 +932,7 @@ const calculatedPrice = computed(() => {
 
   const baseStorage = 25;
   const isNvme = storageType.value === "nvme";
-  const storagePrice = isNvme ? 0.15 : 0.1;
+  const storagePrice = isNvme ? 0.09 : 0.04;
   if (storage.value > baseStorage) {
     price += (storage.value - baseStorage) * storagePrice;
   }
